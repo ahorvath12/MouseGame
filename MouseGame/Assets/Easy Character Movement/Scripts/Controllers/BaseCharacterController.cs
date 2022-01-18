@@ -20,7 +20,7 @@ namespace ECM.Controllers
         [Header("Movement")]
         [Tooltip("Maximum movement speed (in m/s).")]
         [SerializeField]
-        private float _speed = 5.0f;
+        public float _speed = 5.0f;
 
         [Tooltip("Maximum turning speed (in deg/s).")]
         [SerializeField]
