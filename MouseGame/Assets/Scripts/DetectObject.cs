@@ -25,7 +25,6 @@ public class DetectObject : MonoBehaviour
         {
             OnTriggerEnterEvent?.Invoke();
             ObjectInRange = collider[0].gameObject;
-            Debug.Log(ObjectInRange.name);
         }
         else
         {

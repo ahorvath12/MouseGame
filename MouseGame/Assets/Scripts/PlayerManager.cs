@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using ECM.Controllers;
 
 public class PlayerManager : MonoBehaviour
@@ -14,6 +15,8 @@ public class PlayerManager : MonoBehaviour
 
     bool canEatCheese = false;
 
+
+    public UnityEvent OnEatCheeseEvent;
 
     void Start()
     {
@@ -44,6 +47,7 @@ public class PlayerManager : MonoBehaviour
             if (canEatCheese && cheeseDetector.ObjectInRange != null)
             {
                 Destroy(cheeseDetector.ObjectInRange);
+                OnEatCheeseEvent?.Invoke();
             }
         }
     }
