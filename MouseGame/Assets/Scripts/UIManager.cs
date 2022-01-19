@@ -6,7 +6,9 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
     public TextMeshProUGUI cheeseCounterText, timerText;
+    public Slider slider1, slider2;
 
     int cheeseCounter = 0;
     float timeSeconds, timeMinutes, timeHours;
@@ -14,11 +16,11 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
     }
 
     void Update()
     {
-        //timerText.text = Time.time.ToString();
         timerText.text = ConvertFloatToTimer();
     }
 
@@ -72,5 +74,11 @@ public class UIManager : MonoBehaviour
 
 
         return time;
+    }
+
+    public void SetSliderVal(float val)
+    {
+        slider1.value = val;
+        slider2.value = val;
     }
 }

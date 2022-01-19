@@ -11,27 +11,35 @@ public class PlayerManager : MonoBehaviour
     private int walkSpeed = 5, runSpeed = 10;
     public DetectObject cheeseDetector;
     public Animator anim;
+    public UnityEvent OnEatCheeseEvent;
+
+    Rigidbody rbody;
+    UIManager uiManager;
 
     BaseCharacterController charController;
 
     bool canEatCheese = false;
+    float currentStamina = 100;
+    Coroutine regenStamina;
 
 
-    public UnityEvent OnEatCheeseEvent;
-
-    void Start()
+    void Awake()
     {
+        uiManager = UIManager.Instance;
         charController = GetComponent<BaseCharacterController>();
+        rbody = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && currentStamina > 0)
         {
             //sprint
             charController._speed = runSpeed;
             anim.SetFloat("Speed", 1.5f);
+            if (rbody.velocity != Vector3.zero)
+                UseStamina(20 * Time.deltaTime);
         }
         else
         {
@@ -63,4 +71,38 @@ public class PlayerManager : MonoBehaviour
         canEatCheese = inRange;
     }
 
+
+    void UseStamina(float amount)
+    {
+        if (currentStamina - amount >= 0)
+        {
+            currentStamina -= amount;
+            uiManager.SetSliderVal(currentStamina);
+            //staminaBar.value = currentStamina;
+
+            if (regenStamina != null)
+                StopCoroutine(regenStamina);
+
+            regenStamina = StartCoroutine(RegenStamina());
+        }
+        else
+        {
+            anim.SetFloat("Speed", 1f);
+            charController._speed = walkSpeed;
+        }
+    }
+
+    private IEnumerator RegenStamina()
+    {
+        yield return new WaitForSeconds(1);
+
+        while (currentStamina < 100)
+        {
+            //currentStamina += 2f;
+            currentStamina = Mathf.Lerp(currentStamina, currentStamina + 1, 0.1f);
+            uiManager.SetSliderVal(currentStamina);
+            yield return null;
+        }
+        regenStamina = null;
+    }
 }
