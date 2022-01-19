@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 5408351501513686061}
   - component: {fileID: 5408351501514784493}
   - component: {fileID: 5408351501512746626}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: cheese-collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
