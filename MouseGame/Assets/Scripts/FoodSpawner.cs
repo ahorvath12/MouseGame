@@ -5,6 +5,7 @@ using UnityEngine;
 public class FoodSpawner : MonoBehaviour
 {
     public GameObject[] prefabs;
+    public float offsetY = 0.37f;
 
     public int maxSpawns = 15;
     public int minSpawns = 7;
@@ -42,7 +43,7 @@ public class FoodSpawner : MonoBehaviour
         Debug.Log(total);
         while (total > 0)
         {
-            Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(width * -1, width), 0, transform.position.z + Random.Range(length * -1, length));
+            Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(width * -1, width), offsetY, transform.position.z + Random.Range(length * -1, length));
             Instantiate(prefabs[Random.Range(0, prefabs.Length)], spawnPos, Quaternion.identity);
             total--;
             existingFood++;
