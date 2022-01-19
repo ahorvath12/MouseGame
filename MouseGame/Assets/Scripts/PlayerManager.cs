@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private int walkSpeed = 5, runSpeed = 10;
     public DetectObject cheeseDetector;
+    public Animator anim;
 
     BaseCharacterController charController;
 
@@ -26,13 +27,17 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             //sprint
             charController._speed = runSpeed;
+            anim.SetFloat("Speed", 1.5f);
         }
         else
+        {
             charController._speed = walkSpeed;
+            anim.SetFloat("Speed", 1);
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -44,6 +49,7 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
+            //eat cheese
             if (canEatCheese && cheeseDetector.ObjectInRange != null)
             {
                 Destroy(cheeseDetector.ObjectInRange);
