@@ -19,6 +19,8 @@ public class EnemyManager : MonoBehaviour
 
     GameObject player;
 
+    float prevX, prevZ;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +47,8 @@ public class EnemyManager : MonoBehaviour
                 Chasing();
                 break;
         }
-
+        prevX = transform.position.x;
+        prevZ = transform.position.z;
     }
 
     void Idling()

@@ -6,7 +6,7 @@ public class FoodSpawner : MonoBehaviour
 {
     public GameObject[] prefabs;
     public float offsetY = 0.37f;
-
+    public bool respawn, despawn;
     public int maxSpawns = 15;
     public int minSpawns = 7;
     int existingFood = 0;
@@ -21,17 +21,31 @@ public class FoodSpawner : MonoBehaviour
 
     void Start()
     {
-
         SpawnPrefabs();
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Food")
         {
-            if (existingFood < minSpawns)
+            existingFood++;
+            if (despawn && existingFood > maxSpawns)
             {
-                Debug.Log("spawning food");
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Food")
+        {
+            existingFood--;
+            Debug.Log(existingFood);
+
+            if (existingFood < minSpawns && respawn)
+            {
+                Debug.Log("respawning");
                 SpawnPrefabs();
             }
         }
@@ -40,14 +54,11 @@ public class FoodSpawner : MonoBehaviour
     void SpawnPrefabs()
     {
         int total = maxSpawns - existingFood;
-        Debug.Log(total);
         while (total > 0)
         {
             Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(width * -1, width), offsetY, transform.position.z + Random.Range(length * -1, length));
             Instantiate(prefabs[Random.Range(0, prefabs.Length)], spawnPos, Quaternion.identity);
             total--;
-            existingFood++;
         }
-
     }
 }
