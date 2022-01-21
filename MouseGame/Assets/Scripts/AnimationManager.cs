@@ -43,7 +43,6 @@ public class AnimationManager : MonoBehaviour
 
         if (Random.Range(0, 100) > 50)
         {
-            Debug.Log("random anim");
             anim.SetInteger("RandomAction", Random.Range(1, 4));
         }
 

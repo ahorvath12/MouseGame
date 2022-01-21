@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] prefabs;
-    public int minSpawns, maxSpawns;
+    public int minSpawns = 4, maxSpawns = 8;
     public LayerMask layerToIgnore;
 
     float width, length;
@@ -20,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(name + ": " + localEnemies);
         if (localEnemies < minSpawns)
         {
             SpawnPrefabs();
@@ -44,13 +45,13 @@ public class EnemySpawner : MonoBehaviour
     {
         int totalToSpawn = Random.Range(minSpawns, maxSpawns + 1);
 
-        while (localEnemies < totalToSpawn)
+        while (totalToSpawn > 0)
         {
             Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(width * -1, width), 0, transform.position.z + Random.Range(length * -1, length));
             if (PositionRaycast(spawnPos))
             {
                 Instantiate(prefabs[Random.Range(0, prefabs.Length)], spawnPos, Quaternion.identity);
-                localEnemies++;
+                totalToSpawn--;
             }
         }
 
@@ -58,7 +59,7 @@ public class EnemySpawner : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy" && other.name.Contains("ECM"))
         {
             localEnemies++;
         }
@@ -66,7 +67,7 @@ public class EnemySpawner : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy" && other.name.Contains("ECM"))
         {
             localEnemies--;
         }
