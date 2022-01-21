@@ -32,6 +32,11 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
+        if (cheeseDetector.ObjectInRange == null)
+        {
+            anim.SetBool("Eat", false);
+            charController.enabled = true;
+        }
 
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && currentStamina > 0)
         {
@@ -62,8 +67,12 @@ public class PlayerManager : MonoBehaviour
             {
                 Destroy(cheeseDetector.ObjectInRange);
                 OnEatCheeseEvent?.Invoke();
+                anim.SetBool("Eat", true);
+                charController.enabled = false;
             }
+
         }
+
     }
 
     public void IsCheeseInRange(bool inRange)
