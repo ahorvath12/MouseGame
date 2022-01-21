@@ -8,7 +8,8 @@ public class EnemyManager : MonoBehaviour
     enum EnemyState
     {
         Idle,
-        Chasing
+        Chasing,
+        Kill
     }
 
     EnemyState state = EnemyState.Idle;
@@ -38,6 +39,9 @@ public class EnemyManager : MonoBehaviour
                 break;
             case EnemyState.Chasing:
                 Chasing();
+                break;
+            case EnemyState.Kill:
+                agent.isStopped = true;
                 break;
         }
         prevX = transform.position.x;
@@ -78,5 +82,10 @@ public class EnemyManager : MonoBehaviour
             StopCoroutine(coroutine);
 
         state = EnemyState.Chasing;
+    }
+
+    public void InKillZone()
+    {
+        state = EnemyState.Kill;
     }
 }
