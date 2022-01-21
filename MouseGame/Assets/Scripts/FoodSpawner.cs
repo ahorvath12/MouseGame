@@ -25,6 +25,14 @@ public class FoodSpawner : MonoBehaviour
         SpawnPrefabs();
     }
 
+    void FixedUpdate()
+    {
+        if (existingFood < minSpawns && respawn)
+        {
+            SpawnPrefabs();
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Food")
@@ -42,11 +50,6 @@ public class FoodSpawner : MonoBehaviour
         if (other.tag == "Food")
         {
             existingFood--;
-
-            if (existingFood < minSpawns && respawn)
-            {
-                SpawnPrefabs();
-            }
         }
     }
 
