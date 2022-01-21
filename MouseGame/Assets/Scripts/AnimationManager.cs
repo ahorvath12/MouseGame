@@ -6,7 +6,7 @@ public class AnimationManager : MonoBehaviour
 {
     [SerializeField] Rigidbody rbody;
     Animator anim;
-    bool setRandomAnim = false;
+    Coroutine randomCooldown;
     // Start is called before the first frame update
     void Awake()
     {
@@ -15,7 +15,7 @@ public class AnimationManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (rbody.velocity != Vector3.zero)
         {
@@ -24,17 +24,35 @@ public class AnimationManager : MonoBehaviour
         }
         else
         {
-            setRandomAnim = false;
             anim.SetBool("Run", false);
             anim.SetBool("Idle", true);
+
             if (gameObject.tag == "Enemy")
             {
-                if (Random.Range(0, 100) > 75 && !setRandomAnim)
-                {
-                    anim.SetInteger("RandomAction", Random.Range(1, 4));
-                    setRandomAnim = true;
-                }
+                if (anim.GetInteger("RandomAction") != 0)
+                    anim.SetInteger("RandomAction", 0);
+                if (randomCooldown == null)
+                    randomCooldown = StartCoroutine(RandomAnimCoolDown());
             }
         }
+    }
+
+    IEnumerator RandomAnimCoolDown()
+    {
+        yield return new WaitForSeconds(Random.Range(3, 7));
+
+        if (Random.Range(0, 100) > 50)
+        {
+            Debug.Log("random anim");
+            anim.SetInteger("RandomAction", Random.Range(1, 4));
+        }
+
+        //anim.SetInteger("RandomAction", 0);
+        randomCooldown = null;
+    }
+
+    public void ResetRandomAnim()
+    {
+        anim.SetInteger("RandomAction", 0);
     }
 }

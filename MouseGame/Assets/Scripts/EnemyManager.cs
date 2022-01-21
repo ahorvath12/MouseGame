@@ -21,7 +21,6 @@ public class EnemyManager : MonoBehaviour
 
     float prevX, prevZ;
 
-    // Start is called before the first frame update
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
@@ -31,12 +30,6 @@ public class EnemyManager : MonoBehaviour
     }
 
     void Update()
-    {
-
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
     {
         switch (state)
         {
