@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] prefabs;
     public int minSpawns, maxSpawns;
+    public LayerMask layerToIgnore;
 
     float width, length;
     int localEnemies = 0;
@@ -25,6 +26,20 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    bool PositionRaycast(Vector3 pos)
+    {
+        float overlapTestSize = 3;
+        Collider[] hitColliders = new Collider[10];
+        int numberOfCollidersFound = Physics.OverlapSphereNonAlloc(pos, overlapTestSize, hitColliders);
+        int numberOfIgnoreCollidersFound = Physics.OverlapSphereNonAlloc(pos, overlapTestSize, hitColliders, layerToIgnore);
+
+        if (numberOfCollidersFound - numberOfIgnoreCollidersFound == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     void SpawnPrefabs()
     {
         int totalToSpawn = Random.Range(minSpawns, maxSpawns + 1);
@@ -32,8 +47,11 @@ public class EnemySpawner : MonoBehaviour
         while (localEnemies < totalToSpawn)
         {
             Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(width * -1, width), 0, transform.position.z + Random.Range(length * -1, length));
-            Instantiate(prefabs[Random.Range(0, prefabs.Length)], spawnPos, Quaternion.identity);
-            localEnemies++;
+            if (PositionRaycast(spawnPos))
+            {
+                Instantiate(prefabs[Random.Range(0, prefabs.Length)], spawnPos, Quaternion.identity);
+                localEnemies++;
+            }
         }
 
     }

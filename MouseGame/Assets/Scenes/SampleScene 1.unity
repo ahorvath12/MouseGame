@@ -371,6 +371,9 @@ MonoBehaviour:
   - {fileID: 6648755764466363275, guid: 8c2e53297c0e7a143933b326cec7e650, type: 3}
   minSpawns: 3
   maxSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &149921255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +393,9 @@ MonoBehaviour:
   despawn: 0
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &221603091
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +625,9 @@ MonoBehaviour:
   despawn: 0
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &262077523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1197,9 @@ MonoBehaviour:
   - {fileID: 6648755764466363275, guid: 8c2e53297c0e7a143933b326cec7e650, type: 3}
   minSpawns: 3
   maxSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &406289511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,6 +1219,9 @@ MonoBehaviour:
   despawn: 0
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &496305482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1336,9 @@ MonoBehaviour:
   - {fileID: 6648755764466363275, guid: 8c2e53297c0e7a143933b326cec7e650, type: 3}
   minSpawns: 3
   maxSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &496305488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,6 +1358,9 @@ MonoBehaviour:
   despawn: 0
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &529613490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +1782,9 @@ MonoBehaviour:
   - {fileID: 6648755764466363275, guid: 8c2e53297c0e7a143933b326cec7e650, type: 3}
   minSpawns: 3
   maxSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &676467046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1780,6 +1804,9 @@ MonoBehaviour:
   despawn: 0
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &699093080
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,6 +2050,9 @@ MonoBehaviour:
   - {fileID: 6648755764466363275, guid: 8c2e53297c0e7a143933b326cec7e650, type: 3}
   minSpawns: 3
   maxSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &836012732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +2072,9 @@ MonoBehaviour:
   despawn: 1
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &883904504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,6 +2822,9 @@ MonoBehaviour:
   - {fileID: 6648755764466363275, guid: 8c2e53297c0e7a143933b326cec7e650, type: 3}
   minSpawns: 3
   maxSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &1328293061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2808,6 +2844,9 @@ MonoBehaviour:
   despawn: 1
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1381284594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,6 +3041,9 @@ MonoBehaviour:
   - {fileID: 6648755764466363275, guid: 8c2e53297c0e7a143933b326cec7e650, type: 3}
   minSpawns: 3
   maxSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &1385256233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3021,6 +3063,9 @@ MonoBehaviour:
   despawn: 0
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1387150261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,6 +4020,9 @@ MonoBehaviour:
   - {fileID: 6648755764466363275, guid: 8c2e53297c0e7a143933b326cec7e650, type: 3}
   minSpawns: 3
   maxSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &1792251872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3994,6 +4042,9 @@ MonoBehaviour:
   despawn: 1
   maxSpawns: 15
   minSpawns: 7
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &1803489551
 GameObject:
   m_ObjectHideFlags: 0
