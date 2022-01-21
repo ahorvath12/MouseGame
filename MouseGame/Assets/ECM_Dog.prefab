@@ -46,7 +46,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  killZone: 0
   radius: 1.36
   OnTriggerEnterEvent:
     m_PersistentCalls:
@@ -126,7 +125,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  killZone: 0
   radius: 9.22
   OnTriggerEnterEvent:
     m_PersistentCalls:
@@ -507,7 +505,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6648755764466363275}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.13
+  m_Radius: 0.75
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -642,6 +640,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748d39c4e675d674f97baab152294212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerToAvoid:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &6648755764483686973
 GameObject:
   m_ObjectHideFlags: 0

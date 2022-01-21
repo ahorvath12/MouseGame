@@ -7,7 +7,6 @@ public class DetectObject : MonoBehaviour
 {
     public GameObject ObjectInRange { get; private set; }
     public LayerMask targetLayer;
-    public bool killZone;
     [Range(0.1f, 10)]
     public float radius;
     public UnityEvent OnTriggerEnterEvent, OnTriggerExitEvent;

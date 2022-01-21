@@ -11,6 +11,7 @@ public class EnemyManager : MonoBehaviour
         Chasing,
         Kill
     }
+    public LayerMask layerToAvoid;
 
     EnemyState state = EnemyState.Idle;
 
@@ -67,7 +68,9 @@ public class EnemyManager : MonoBehaviour
 
         int randomX = Random.Range(-11, 11);
         int randomZ = Random.Range(-11, 11);
-        agent.destination = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        Vector3 dest = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        if (PositionRaycast(dest))
+            agent.destination = dest;
         coroutine = null;
     }
 
@@ -87,5 +90,18 @@ public class EnemyManager : MonoBehaviour
     public void InKillZone()
     {
         state = EnemyState.Kill;
+    }
+
+    bool PositionRaycast(Vector3 pos)
+    {
+        float overlapTestSize = agent.radius;
+        Collider[] hitColliders = new Collider[10];
+        int numberOfCollidersFound = Physics.OverlapSphereNonAlloc(pos, overlapTestSize, hitColliders, layerToAvoid);
+
+        if (numberOfCollidersFound == 0)
+        {
+            return true;
+        }
+        return false;
     }
 }
