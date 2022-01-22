@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 149921251}
   - component: {fileID: 149921254}
   - component: {fileID: 149921255}
+  - component: {fileID: 149921256}
   m_Layer: 0
   m_Name: EnemySpawner (2)
   m_TagString: Untagged
@@ -396,6 +397,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &149921256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149921249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 1
 --- !u!1 &221603091
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +556,7 @@ GameObject:
   - component: {fileID: 244727297}
   - component: {fileID: 244727296}
   - component: {fileID: 244727299}
+  - component: {fileID: 244727300}
   m_Layer: 0
   m_Name: PlayerView
   m_TagString: Untagged
@@ -628,6 +662,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &244727300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244727294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 0
 --- !u!1 &262077523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1163,7 @@ GameObject:
   - component: {fileID: 406289507}
   - component: {fileID: 406289510}
   - component: {fileID: 406289511}
+  - component: {fileID: 406289512}
   m_Layer: 0
   m_Name: EnemySpawner (1)
   m_TagString: Untagged
@@ -1222,6 +1289,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &406289512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406289505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 1
 --- !u!1 &496305482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1335,7 @@ GameObject:
   - component: {fileID: 496305484}
   - component: {fileID: 496305487}
   - component: {fileID: 496305488}
+  - component: {fileID: 496305489}
   m_Layer: 0
   m_Name: EnemySpawner (6)
   m_TagString: Untagged
@@ -1361,6 +1461,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &496305489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496305482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 1
 --- !u!1 &529613490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,6 +1814,7 @@ GameObject:
   - component: {fileID: 676467042}
   - component: {fileID: 676467045}
   - component: {fileID: 676467046}
+  - component: {fileID: 676467047}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -1807,6 +1940,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &676467047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676467040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 1
 --- !u!1 &699093080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,6 +2115,7 @@ GameObject:
   - component: {fileID: 836012728}
   - component: {fileID: 836012731}
   - component: {fileID: 836012732}
+  - component: {fileID: 836012733}
   m_Layer: 0
   m_Name: EnemySpawner (4)
   m_TagString: Untagged
@@ -2075,6 +2241,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &836012733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836012726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 1
 --- !u!1 &883904504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,7 +2440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.36507988, y: 0, z: 0, w: 0.9309762}
-  m_LocalPosition: {x: 0, y: 23.7, z: -10}
+  m_LocalPosition: {x: 0, y: 23.7, z: -20.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2722,6 +2920,7 @@ GameObject:
   - component: {fileID: 1328293057}
   - component: {fileID: 1328293060}
   - component: {fileID: 1328293061}
+  - component: {fileID: 1328293062}
   m_Layer: 0
   m_Name: EnemySpawner (5)
   m_TagString: Untagged
@@ -2847,6 +3046,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &1328293062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328293055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 1
 --- !u!1 &1381284594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2893,7 +3124,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
-  killZone: 0
   radius: 0.4
   OnTriggerEnterEvent:
     m_PersistentCalls:
@@ -2941,6 +3171,7 @@ GameObject:
   - component: {fileID: 1385256229}
   - component: {fileID: 1385256232}
   - component: {fileID: 1385256233}
+  - component: {fileID: 1385256234}
   m_Layer: 0
   m_Name: EnemySpawner (7)
   m_TagString: Untagged
@@ -3066,6 +3297,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &1385256234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385256227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 1
 --- !u!1 &1387150261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3920,6 +4183,7 @@ GameObject:
   - component: {fileID: 1792251868}
   - component: {fileID: 1792251871}
   - component: {fileID: 1792251872}
+  - component: {fileID: 1792251873}
   m_Layer: 0
   m_Name: EnemySpawner (3)
   m_TagString: Untagged
@@ -4045,6 +4309,38 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &1792251873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792251866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54396a8b590fb424fbd43129e9739290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallPrefabs:
+  - {fileID: 1939826923102159648, guid: ea99386f1db7a804db09bb9437acb55b, type: 3}
+  - {fileID: 2051144404469750352, guid: 83d42b203276b5b47828fa31c66650e9, type: 3}
+  - {fileID: 3477025858808113997, guid: e8144cbc2d6d5704dacd7cd1485769a3, type: 3}
+  - {fileID: 6376519102980687461, guid: b44a1b682a4abcc4d9a1c8391f6e7450, type: 3}
+  - {fileID: 2718218176761934963, guid: d1d666fdc72b6e7459eb613001fb8a5d, type: 3}
+  - {fileID: 2278380976432542341, guid: 2d587352cb10c9843ad4f66124b8213d, type: 3}
+  - {fileID: 3857614581033595977, guid: e6b5a653ddff86c48aa925515e22f28e, type: 3}
+  - {fileID: 2731903698007682752, guid: a8eddf837c1ea5546b4b6f3da5e249e5, type: 3}
+  - {fileID: 1599956027265914606, guid: 02c85ca8b94b0cb419f2f3e9f2c9ee44, type: 3}
+  - {fileID: 8355562582948006701, guid: 78eb8b685926f5e42b3c4899f9320c27, type: 3}
+  - {fileID: 8337087787712344039, guid: 13f11f3defeec024eaaf190aaed2aec0, type: 3}
+  bigPrefabs:
+  - {fileID: 5425567965234919640, guid: 8b3c06f0d36f7d145a83343ff0e0d575, type: 3}
+  - {fileID: 7095954963041459397, guid: 81143684611107d4c85bde84724aac1c, type: 3}
+  - {fileID: 1067406137972104750, guid: 117ee90a0c9ed6141a9db2583e69f283, type: 3}
+  layerToIgnore:
+    serializedVersion: 2
+    m_Bits: 1
+  respawn: 1
 --- !u!1 &1803489551
 GameObject:
   m_ObjectHideFlags: 0
