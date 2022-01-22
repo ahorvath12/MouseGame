@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FurnitureSpawner : MonoBehaviour
 {
@@ -17,27 +18,24 @@ public class FurnitureSpawner : MonoBehaviour
         width = transform.localScale.x / 2;
         length = transform.localScale.z / 2;
         localObjs = 0;
-
-        SpawnPrefabs();
-        SpawnOneBigPrefab();
-
+        if (!respawn)
+            SpawnPrefabs();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(localObjs);
         if (localObjs < minSpawns && respawn)
         {
             SpawnPrefabs();
-            if (Random.Range(0, 100) > 75)
-                SpawnOneBigPrefab();
         }
     }
     bool PositionRaycast(Vector3 pos, Vector3 scale, Quaternion rot)
     {
         Collider[] hitColliders = new Collider[10];
         int numberOfCollidersFound = Physics.OverlapBoxNonAlloc(pos, scale, hitColliders);
-        int numberOfIgnoreCollidersFound = Physics.OverlapBoxNonAlloc(pos, scale, hitColliders, rot, layerToIgnore);
+        int numberOfIgnoreCollidersFound = Physics.OverlapBoxNonAlloc(pos, scale / 2, hitColliders, rot, layerToIgnore);
 
         if (numberOfCollidersFound - numberOfIgnoreCollidersFound == 0)
         {
@@ -55,13 +53,13 @@ public class FurnitureSpawner : MonoBehaviour
             GameObject item = smallPrefabs[Random.Range(0, smallPrefabs.Length)];
             Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(width * -1, width), item.transform.position.y, transform.position.z + Random.Range(length * -1, length));
             Quaternion spawnRot = Quaternion.Euler(0, Random.Range(0, 360), 0);
-            if (PositionRaycast(spawnPos, new Vector3(3, 3, 3), spawnRot))
+            if (PositionRaycast(spawnPos, item.GetComponent<NavMeshObstacle>().size, spawnRot))
             {
                 Instantiate(item, spawnPos, spawnRot);
                 totalToSpawn--;
             }
         }
-
+        SpawnOneBigPrefab();
     }
 
     void SpawnOneBigPrefab()
@@ -69,7 +67,7 @@ public class FurnitureSpawner : MonoBehaviour
         GameObject item = bigPrefabs[Random.Range(0, bigPrefabs.Length)];
         Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(width * -1, width), item.transform.position.y, transform.position.z + Random.Range(length * -1, length));
         Quaternion spawnRot = Quaternion.Euler(0, Random.Range(0, 360), 0);
-        if (PositionRaycast(spawnPos, new Vector3(10, 10, 10), spawnRot))
+        if (PositionRaycast(spawnPos, item.GetComponent<NavMeshObstacle>().size, spawnRot))
         {
             Instantiate(item, spawnPos, spawnRot);
         }

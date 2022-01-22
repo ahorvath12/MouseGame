@@ -2459,7 +2459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetTransform: {fileID: 2020650735}
-  _distanceToTarget: 15
+  _distanceToTarget: 20
   _followSpeed: 3
 --- !u!1 &1004188785
 GameObject:
@@ -3124,7 +3124,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
-  radius: 0.4
+  radius: 0.64
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:

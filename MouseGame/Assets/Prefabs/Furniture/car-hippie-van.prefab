@@ -92,7 +92,7 @@ MeshCollider:
   m_GameObject: {fileID: 7095855149700505949}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 7546554662095501829}
   m_Layer: 0
   m_Name: car-hippie-van
-  m_TagString: Untagged
+  m_TagString: Furniture
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,11 +144,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 0.85, y: 0.91, z: 2.03}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.09, z: 0}
   m_TimeToStationary: 0.5
 --- !u!54 &7546554662095501829
 Rigidbody:
@@ -258,7 +258,7 @@ MeshCollider:
   m_GameObject: {fileID: 7096754953945062303}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -355,7 +355,7 @@ MeshCollider:
   m_GameObject: {fileID: 7096758961189655411}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -452,7 +452,7 @@ MeshCollider:
   m_GameObject: {fileID: 7097157386093435807}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -554,7 +554,7 @@ MeshCollider:
   m_GameObject: {fileID: 7097538676335482351}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
