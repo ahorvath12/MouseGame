@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3808802132163542412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 9.33}
+  m_LocalPosition: {x: 0, y: 0, z: 6.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6648755764466363280}
@@ -125,7 +125,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  radius: 9.22
+  radius: 6.21
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 6648755764466363285}
   - component: {fileID: 6648755764466363274}
   - component: {fileID: -8003586049789740062}
+  - component: {fileID: 6702530097401732440}
   m_Layer: 0
   m_Name: ECM_Dog
   m_TagString: Enemy
@@ -643,6 +644,22 @@ MonoBehaviour:
   layerToAvoid:
     serializedVersion: 2
     m_Bits: 128
+--- !u!208 &6702530097401732440
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648755764466363275}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6648755764483686973
 GameObject:
   m_ObjectHideFlags: 0
