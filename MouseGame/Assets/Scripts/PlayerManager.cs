@@ -52,13 +52,7 @@ public class PlayerManager : MonoBehaviour
             anim.SetFloat("Speed", 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //pause
-            Time.timeScale = 0;
-        }
-        else
-            Time.timeScale = 1f;
+
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
