@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7acbaf9a5b25b8c4aae95ac44d7df120
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - GoodDog
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 45c60d0737d3a3d4eaa783d0698941bb, type: 3}
+  - {fileID: 12800000, guid: b62b44251d32cdb40bbf63b036e380b9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
