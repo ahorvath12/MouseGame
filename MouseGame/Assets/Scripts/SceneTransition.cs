@@ -14,10 +14,8 @@ public class SceneTransition : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null)
             GameObject.FindGameObjectWithTag("Player").GetComponent<BaseCharacterController>().enabled = false;
 
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            anim.SetTrigger("In");
-        }
+        anim.SetTrigger("In");
+
     }
 
     public void TransitionOut()
@@ -32,7 +30,8 @@ public class SceneTransition : MonoBehaviour
 
     public void ActivateScene()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<BaseCharacterController>().enabled = true;
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+            GameObject.FindGameObjectWithTag("Player").GetComponent<BaseCharacterController>().enabled = true;
     }
     public void ChangeScene(int index)
     {

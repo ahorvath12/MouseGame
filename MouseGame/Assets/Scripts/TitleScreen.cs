@@ -5,25 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    int sceneIndex = 0;
 
+    public void ChangeScene(int index)
+    {
+        sceneIndex = index;
+        StartCoroutine(WaitToTransition());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator WaitToTransition()
     {
-
-    }
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void ShowCredits()
-    {
-
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(sceneIndex);
     }
 }
