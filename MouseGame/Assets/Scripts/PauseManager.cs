@@ -65,9 +65,11 @@ public class PauseManager : MonoBehaviour
         {
             case 0:
                 iconNumber = 1;
+                MusicManager.Instance.ToggleMusic(false);
                 break;
             case 1:
                 iconNumber = 0;
+                MusicManager.Instance.ToggleMusic(true);
                 break;
         }
         musicIcon.sprite = musicIcons[iconNumber];
