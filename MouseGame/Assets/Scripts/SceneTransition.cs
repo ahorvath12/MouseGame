@@ -20,11 +20,13 @@ public class SceneTransition : MonoBehaviour
 
         anim = GetComponent<Animator>();
         if (anim != null && SceneManager.GetActiveScene().buildIndex != 1)
-            anim.SetTrigger("In");
-        else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            anim.SetTrigger("Cover");
+            anim.updateMode = AnimatorUpdateMode.UnscaledTime;
+            anim.SetTrigger("In");
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+            anim.SetTrigger("Cover");
+
 
     }
 
@@ -45,6 +47,13 @@ public class SceneTransition : MonoBehaviour
     }
     public void ChangeScene(int index)
     {
+        Time.timeScale = 1f;
+        StartCoroutine(WaitToChangeScene(index));
+    }
+
+    public IEnumerator WaitToChangeScene(int index)
+    {
+        yield return new WaitForSeconds(2.5f);
         SceneManager.LoadScene(index);
     }
 
