@@ -7,14 +7,24 @@ using ECM.Controllers;
 public class SceneTransition : MonoBehaviour
 {
     Animator anim;
+    public GameObject tutorialPage;
+    public bool showTutorialAtStart = false;
 
     void Awake()
     {
-        anim = GetComponent<Animator>();
+        if (tutorialPage != null)
+            ShowTutorial(showTutorialAtStart);
         if (GameObject.FindGameObjectWithTag("Player") != null)
             GameObject.FindGameObjectWithTag("Player").GetComponent<BaseCharacterController>().enabled = false;
 
-        anim.SetTrigger("In");
+
+        anim = GetComponent<Animator>();
+        if (anim != null && SceneManager.GetActiveScene().buildIndex != 1)
+            anim.SetTrigger("In");
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            anim.SetTrigger("Cover");
+        }
 
     }
 
@@ -36,5 +46,10 @@ public class SceneTransition : MonoBehaviour
     public void ChangeScene(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+    public void ShowTutorial(bool show)
+    {
+        tutorialPage.SetActive(show);
     }
 }
