@@ -51,6 +51,11 @@ public class SceneTransition : MonoBehaviour
         StartCoroutine(WaitToChangeScene(index));
     }
 
+    public void CanPlayNewMusic()
+    {
+        MusicManager.Instance.CanChangeMusic();
+    }
+
     public IEnumerator WaitToChangeScene(int index)
     {
         yield return new WaitForSeconds(2.5f);
@@ -60,5 +65,11 @@ public class SceneTransition : MonoBehaviour
     public void ShowTutorial(bool show)
     {
         tutorialPage.SetActive(show);
+    }
+
+    public void ChangeMusicAfterTransition(AudioClip clip)
+    {
+        MusicManager.Instance.TransitionMusic(clip);
+        //StartCoroutine(MusicManager.Instance.FadeMusicOut(clip));
     }
 }
