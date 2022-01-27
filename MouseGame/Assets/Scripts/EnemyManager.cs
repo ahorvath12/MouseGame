@@ -12,12 +12,14 @@ public class EnemyManager : MonoBehaviour
         Kill
     }
     public LayerMask layerToAvoid;
+    public AudioClip[] audioClips;
 
     EnemyState state = EnemyState.Idle;
 
     Rigidbody rbody;
     NavMeshAgent agent;
-    Coroutine coroutine;
+    AudioSource audioSource;
+    Coroutine coroutine, audioCoroutine;
 
     GameObject player;
 
@@ -27,6 +29,7 @@ public class EnemyManager : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         state = EnemyState.Idle;
     }
@@ -47,6 +50,11 @@ public class EnemyManager : MonoBehaviour
         }
         prevX = transform.position.x;
         prevZ = transform.position.z;
+
+        if (audioCoroutine == null)
+        {
+            audioCoroutine = StartCoroutine(SelectAudioClips());
+        }
     }
 
     void Idling()
@@ -103,5 +111,19 @@ public class EnemyManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    IEnumerator SelectAudioClips()
+    {
+        yield return new WaitForSeconds(Random.Range(3, 7));
+
+        if (!audioSource.isPlaying && Random.Range(0, 100) > 90)
+        {
+            audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+            audioSource.Play();
+        }
+
+        audioCoroutine = null;
+        yield return null;
     }
 }
