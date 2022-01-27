@@ -81,4 +81,10 @@ public class UIManager : MonoBehaviour
         slider1.value = val;
         slider2.value = val;
     }
+
+    public void PlaySqueak(AudioClip clip)
+    {
+        GetComponent<AudioSource>().clip = clip;
+        GetComponent<AudioSource>().Play();
+    }
 }

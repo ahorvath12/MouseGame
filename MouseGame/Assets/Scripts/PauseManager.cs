@@ -11,6 +11,7 @@ public class PauseManager : MonoBehaviour
     public Sprite[] musicIcons;
     int iconNumber = 0;
     bool paused = false;
+    public AudioClip squeak1, squeak2;
 
     void Awake()
     {
@@ -40,6 +41,7 @@ public class PauseManager : MonoBehaviour
         {
             paused = true;
             Time.timeScale = 0f;
+            UIManager.Instance.PlaySqueak(squeak1);
             pauseScreen.SetActive(true);
         }
     }
@@ -50,6 +52,7 @@ public class PauseManager : MonoBehaviour
         {
             paused = false;
             Time.timeScale = 1f;
+            UIManager.Instance.PlaySqueak(squeak2);
             pauseScreen.SetActive(false);
         }
     }
