@@ -64,13 +64,13 @@ public class PauseManager : MonoBehaviour
 
     public void ToggleMusic()
     {
-        switch (iconNumber)
+        switch (MusicManager.Instance.audioSource.isPlaying)
         {
-            case 0:
+            case true:
                 iconNumber = 1;
                 MusicManager.Instance.ToggleMusic(false);
                 break;
-            case 1:
+            case false:
                 iconNumber = 0;
                 MusicManager.Instance.ToggleMusic(true);
                 break;

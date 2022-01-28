@@ -8242,7 +8242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c53ca1aaa075ed48a39861c0f009b68, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9014657c102daf6409f8d509f30f9210, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9499,8 +9499,8 @@ MonoBehaviour:
   pauseScreen: {fileID: 1993325281}
   musicIcon: {fileID: 1318867926}
   musicIcons:
-  - {fileID: 21300000, guid: 5c53ca1aaa075ed48a39861c0f009b68, type: 3}
-  - {fileID: 21300000, guid: 3d41a49c747cd9d4eb3e978afc40524d, type: 3}
+  - {fileID: 21300000, guid: 9014657c102daf6409f8d509f30f9210, type: 3}
+  - {fileID: 21300000, guid: 4e2c3e0267cc7524ba164c626c77a380, type: 3}
   squeak1: {fileID: 8300000, guid: ae508a186b259734ab0f05de6b3ae899, type: 3}
   squeak2: {fileID: 8300000, guid: 50fe8f5ca16f1b446bceb65988e08606, type: 3}
 --- !u!82 &1468531628
@@ -11703,7 +11703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 518}
+  m_AnchoredPosition: {x: 0, y: 542}
   m_SizeDelta: {x: 800, y: 538.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1785088618

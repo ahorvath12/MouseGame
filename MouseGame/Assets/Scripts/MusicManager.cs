@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance { get; private set; }
-    AudioSource audioSource;
-    bool canChangeMusic;
+    public AudioSource audioSource;
+    bool canChangeMusic, isPlaying = true;
     float volume;
     Coroutine coroutine;
     // Start is called before the first frame update
@@ -30,7 +30,10 @@ public class MusicManager : MonoBehaviour
 
     public void ToggleMusic(bool toggle)
     {
-        audioSource.enabled = toggle;
+        if (toggle) audioSource.Play();
+        else audioSource.Pause();
+
+        isPlaying = audioSource.isPlaying;
     }
 
     public void CanChangeMusic()
@@ -61,7 +64,8 @@ public class MusicManager : MonoBehaviour
             yield return null;
         }
         audioSource.volume = volume;
-        audioSource.Play();
+        if (isPlaying)
+            audioSource.Play();
         canChangeMusic = false;
         Debug.Log(audioSource.isPlaying);
     }
