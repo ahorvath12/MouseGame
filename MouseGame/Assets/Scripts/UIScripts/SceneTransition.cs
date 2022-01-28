@@ -72,4 +72,12 @@ public class SceneTransition : MonoBehaviour
         MusicManager.Instance.TransitionMusic(clip);
         //StartCoroutine(MusicManager.Instance.FadeMusicOut(clip));
     }
+
+    public void StartTime()
+    {
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.running = true;
+        }
+    }
 }

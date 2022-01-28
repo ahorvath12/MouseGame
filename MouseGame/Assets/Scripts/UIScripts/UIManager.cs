@@ -10,11 +10,13 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI cheeseCounterText, timerText, endTimer, endCheese;
     public Slider slider1, slider2;
     public GameObject gameOverScreen;
+    [HideInInspector] public bool running = false;
 
     int cheeseCounter = 0;
     float timeSeconds, timeMinutes, timeHours;
     string timer = "";
-    bool running = true;
+    int currentTime = 0;
+    float actualTime = 0;
 
     void Awake()
     {
@@ -37,7 +39,9 @@ public class UIManager : MonoBehaviour
     {
         string time = "";
 
-        int currentTime = Mathf.RoundToInt(Time.time);
+        //int currentTime = Mathf.RoundToInt(Time.time);
+        actualTime += Time.deltaTime;
+        currentTime = (int)actualTime;
 
         //if timer is below a minute
         if (currentTime < 60)
