@@ -7,12 +7,14 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
-    public TextMeshProUGUI cheeseCounterText, timerText;
+    public TextMeshProUGUI cheeseCounterText, timerText, endTimer, endCheese;
     public Slider slider1, slider2;
+    public GameObject gameOverScreen;
 
     int cheeseCounter = 0;
     float timeSeconds, timeMinutes, timeHours;
     string timer = "";
+    bool running = true;
 
     void Awake()
     {
@@ -21,7 +23,8 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        timerText.text = ConvertFloatToTimer();
+        if (running)
+            timerText.text = ConvertFloatToTimer();
     }
 
     public void UpdateCheeseCounter()
@@ -86,5 +89,26 @@ public class UIManager : MonoBehaviour
     {
         GetComponent<AudioSource>().clip = clip;
         GetComponent<AudioSource>().Play();
+    }
+
+    public IEnumerator SlideInGameOverScreen()
+    {
+        running = false;
+        yield return new WaitForSeconds(1f);
+
+        PlayerManager.Instance.caught = false;
+        endTimer.text = timerText.text;
+        endCheese.text = cheeseCounter.ToString();
+
+        Vector3 newPos = new Vector3(gameOverScreen.transform.localPosition.x, 0, gameOverScreen.transform.localPosition.z);
+
+        while (gameOverScreen.transform.localPosition.y > 0)
+        {
+            float yVal = Mathf.Lerp(gameOverScreen.transform.position.y, gameOverScreen.transform.position.y - 0.05f, 0.5f);
+            gameOverScreen.transform.position = new Vector3(gameOverScreen.transform.position.x, yVal, gameOverScreen.transform.position.z);
+            yield return null;
+        }
+
+        gameOverScreen.transform.localPosition = newPos;
     }
 }

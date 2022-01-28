@@ -98,6 +98,7 @@ public class EnemyManager : MonoBehaviour
     public void InKillZone()
     {
         state = EnemyState.Kill;
+        player.GetComponent<PlayerManager>().Caught();
     }
 
     bool PositionRaycast(Vector3 pos)

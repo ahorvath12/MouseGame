@@ -6,16 +6,19 @@ using ECM.Controllers;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance { get; private set; }
 
     [SerializeField]
     private int walkSpeed = 5, runSpeed = 10;
     public DetectObject cheeseDetector;
     public Animator anim;
+    public AudioClip[] gameOverSounds;
     public UnityEvent OnEatCheeseEvent;
+    [HideInInspector] public bool caught;
 
     Rigidbody rbody;
     UIManager uiManager;
-
+    AudioSource audioSource;
     BaseCharacterController charController;
 
     bool canEatCheese = false;
@@ -25,9 +28,13 @@ public class PlayerManager : MonoBehaviour
 
     void Awake()
     {
+        if (Instance == null || Instance != this)
+            Instance = this;
+
         uiManager = UIManager.Instance;
         charController = GetComponent<BaseCharacterController>();
         rbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -35,7 +42,7 @@ public class PlayerManager : MonoBehaviour
         if (cheeseDetector.ObjectInRange == null)
         {
             anim.SetBool("Eat", false);
-            charController.enabled = true;
+            //charController.enabled = true;
         }
 
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && currentStamina > 0)
@@ -62,7 +69,7 @@ public class PlayerManager : MonoBehaviour
                 Destroy(cheeseDetector.ObjectInRange);
                 OnEatCheeseEvent?.Invoke();
                 anim.SetBool("Eat", true);
-                charController.enabled = false;
+                //charController.enabled = false;
             }
 
         }
@@ -108,4 +115,40 @@ public class PlayerManager : MonoBehaviour
         }
         regenStamina = null;
     }
+
+    public void Caught()
+    {
+        charController.enabled = false;
+        caught = true;
+        rbody.velocity = Vector3.zero;
+        anim.SetBool("Death", true);
+        StartCoroutine(PlayNoiseOnLoop());
+        StartCoroutine(UIManager.Instance.SlideInGameOverScreen());
+    }
+
+    IEnumerator PlayNoiseOnLoop()
+    {
+        float timePassed = 0;
+        while (caught)
+        {
+            timePassed += Time.deltaTime;
+            if (!audioSource.isPlaying && timePassed > Random.Range(0, 4))
+            {
+                audioSource.clip = gameOverSounds[Random.Range(0, gameOverSounds.Length)];
+                audioSource.Play();
+                timePassed = 0;
+            }
+            yield return null;
+        }
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.0005f, 5f);
+            yield return null;
+        }
+        audioSource.volume = 0;
+        audioSource.Stop();
+        this.enabled = false;
+    }
+
 }
