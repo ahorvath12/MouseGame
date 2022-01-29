@@ -67,6 +67,5 @@ public class MusicManager : MonoBehaviour
         if (isPlaying)
             audioSource.Play();
         canChangeMusic = false;
-        Debug.Log(audioSource.isPlaying);
     }
 }

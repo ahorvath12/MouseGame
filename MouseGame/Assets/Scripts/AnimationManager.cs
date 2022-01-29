@@ -54,4 +54,9 @@ public class AnimationManager : MonoBehaviour
     {
         anim.SetInteger("RandomAction", 0);
     }
+
+    public void AttackAnim()
+    {
+        anim.SetBool("Attack", true);
+    }
 }
