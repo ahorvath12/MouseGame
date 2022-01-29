@@ -80,4 +80,9 @@ public class SceneTransition : MonoBehaviour
             UIManager.Instance.running = true;
         }
     }
+
+    public void DestroyEnemies()
+    {
+
+    }
 }

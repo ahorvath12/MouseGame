@@ -58,7 +58,8 @@ public class FurnitureSpawner : MonoBehaviour
                 totalToSpawn--;
             }
         }
-        SpawnOneBigPrefab();
+        if (respawn)
+            SpawnOneBigPrefab();
     }
 
     void SpawnOneBigPrefab()

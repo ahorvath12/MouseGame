@@ -8140,6 +8140,7 @@ GameObject:
   - component: {fileID: 1318867927}
   - component: {fileID: 1318867926}
   - component: {fileID: 1318867925}
+  - component: {fileID: 1318867928}
   m_Layer: 5
   m_Name: MusicButton
   m_TagString: Untagged
@@ -8210,8 +8211,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1468531627}
-        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+      - m_Target: {fileID: 1318867928}
+        m_TargetAssemblyTypeName: MusicToggle, Assembly-CSharp
         m_MethodName: ToggleMusic
         m_Mode: 1
         m_Arguments:
@@ -8260,6 +8261,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318867923}
   m_CullTransparentMesh: 1
+--- !u!114 &1318867928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318867923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db798aaaf8989a4aa823b18b638862c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicIcon: {fileID: 1318867926}
+  musicIcons:
+  - {fileID: 21300000, guid: 9014657c102daf6409f8d509f30f9210, type: 3}
+  - {fileID: 21300000, guid: 4e2c3e0267cc7524ba164c626c77a380, type: 3}
 --- !u!1 &1328293055
 GameObject:
   m_ObjectHideFlags: 0
@@ -9484,6 +9501,7 @@ MonoBehaviour:
   slider1: {fileID: 883904506}
   slider2: {fileID: 221603093}
   gameOverScreen: {fileID: 1785088616}
+  running: 0
 --- !u!114 &1468531627
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,20 @@ public class MusicToggle : MonoBehaviour
     public Sprite[] musicIcons;
     int iconNumber = 0;
 
+    void Update()
+    {
+        switch (MusicManager.Instance.audioSource.isPlaying)
+        {
+            case true:
+                iconNumber = 0;
+                break;
+            case false:
+                iconNumber = 1;
+                break;
+        }
+        musicIcon.sprite = musicIcons[iconNumber];
+    }
+
     public void ToggleMusic()
     {
         switch (MusicManager.Instance.audioSource.isPlaying)

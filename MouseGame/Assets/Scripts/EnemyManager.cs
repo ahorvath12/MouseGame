@@ -15,6 +15,7 @@ public class EnemyManager : MonoBehaviour
     public AudioClip[] audioClips;
 
     EnemyState state = EnemyState.Idle;
+    static bool caughtPlayer = false;
 
     Rigidbody rbody;
     NavMeshAgent agent;
@@ -46,6 +47,7 @@ public class EnemyManager : MonoBehaviour
                 break;
             case EnemyState.Kill:
                 agent.isStopped = true;
+                caughtPlayer = true;
                 break;
         }
         prevX = transform.position.x;
@@ -54,6 +56,11 @@ public class EnemyManager : MonoBehaviour
         if (audioCoroutine == null)
         {
             audioCoroutine = StartCoroutine(SelectAudioClips());
+        }
+
+        if (caughtPlayer)
+        {
+            StartCoroutine(FadeAudio());
         }
     }
 
@@ -126,5 +133,15 @@ public class EnemyManager : MonoBehaviour
 
         audioCoroutine = null;
         yield return null;
+    }
+
+    IEnumerator FadeAudio()
+    {
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.005f, 5f);
+            yield return null;
+        }
+        audioSource.volume = 0;
     }
 }

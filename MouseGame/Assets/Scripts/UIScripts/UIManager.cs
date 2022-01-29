@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     {
         if (running)
             timerText.text = ConvertFloatToTimer();
+        if (slider1.value != slider2.value)
+            slider2.value = slider1.value;
     }
 
     public void UpdateCheeseCounter()
@@ -86,7 +88,6 @@ public class UIManager : MonoBehaviour
     public void SetSliderVal(float val)
     {
         slider1.value = val;
-        slider2.value = val;
     }
 
     public void PlaySqueak(AudioClip clip)
