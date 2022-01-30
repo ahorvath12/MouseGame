@@ -63,7 +63,6 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(cheeseDetector.ObjectInRange.name);
             //eat cheese
             if (cheeseDetector.ObjectInRange != null)
             {

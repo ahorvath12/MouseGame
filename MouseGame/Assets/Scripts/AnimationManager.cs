@@ -59,4 +59,9 @@ public class AnimationManager : MonoBehaviour
     {
         anim.SetBool("Attack", true);
     }
+
+    public void EyeAnim(string boolName, bool boolVal)
+    {
+        anim.SetBool(boolName, boolVal);
+    }
 }
