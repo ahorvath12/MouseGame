@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
     public AudioClip[] audioClips;
 
     EnemyState state = EnemyState.Idle;
-    static bool caughtPlayer = false;
+    bool playerInRange = false;
 
     Rigidbody rbody;
     NavMeshAgent agent;
@@ -23,8 +23,6 @@ public class EnemyManager : MonoBehaviour
     Coroutine coroutine, audioCoroutine;
 
     GameObject player;
-
-    float prevX, prevZ;
 
     void Start()
     {
@@ -47,25 +45,28 @@ public class EnemyManager : MonoBehaviour
                 break;
             case EnemyState.Kill:
                 agent.isStopped = true;
-                caughtPlayer = true;
+                StartCoroutine(FadeAudio());
                 break;
         }
-        prevX = transform.position.x;
-        prevZ = transform.position.z;
 
         if (audioCoroutine == null)
         {
             audioCoroutine = StartCoroutine(SelectAudioClips());
         }
-
-        if (caughtPlayer)
-        {
-            StartCoroutine(FadeAudio());
-        }
     }
 
     void Idling()
     {
+        if (playerInRange)
+        {
+            Debug.Log("player in range");
+            if (SeePlayer())
+            {
+                StartChase();
+                return;
+            }
+        }
+
         if (rbody.velocity == Vector3.zero && coroutine == null)
         {
             coroutine = StartCoroutine(WaitBeforeMoving());
@@ -74,7 +75,16 @@ public class EnemyManager : MonoBehaviour
 
     void Chasing()
     {
+        if (!SeePlayer())
+        {
+            state = EnemyState.Idle;
+            Debug.Log("return to idle");
+            //agent.destination = transform.position;
+            return;
+        }
+
         agent.destination = player.transform.position;
+
     }
 
     IEnumerator WaitBeforeMoving()
@@ -89,13 +99,8 @@ public class EnemyManager : MonoBehaviour
         coroutine = null;
     }
 
-    public void StartChase(bool inRange)
+    void StartChase()
     {
-        if (!inRange)
-        {
-            state = EnemyState.Idle;
-            return;
-        }
         if (coroutine != null)
             StopCoroutine(coroutine);
 
@@ -143,5 +148,20 @@ public class EnemyManager : MonoBehaviour
             yield return null;
         }
         audioSource.volume = 0;
+    }
+
+    public void StartRaycast(bool inRange)
+    {
+        playerInRange = inRange;
+    }
+
+    bool SeePlayer()
+    {
+        Vector3 heading = transform.position - player.transform.position;
+        Vector3 direction = (heading / (heading.magnitude)) * -1;
+        RaycastHit hit;
+        Vector3 startPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        Physics.Raycast(startPoint, direction, out hit, 15, ~layerToAvoid);
+        return hit.collider != null && hit.transform.tag == "Player";
     }
 }

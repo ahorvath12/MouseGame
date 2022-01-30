@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1476574478305765130}
   - component: {fileID: 8533154204276096028}
   - component: {fileID: 4471371119217987602}
+  - component: {fileID: 4541531089252061810}
   m_Layer: 7
   m_Name: cheese-slice
   m_TagString: Food
@@ -111,7 +112,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.062000003, y: 0.067, z: 0.095000006}
+  m_Extents: {x: 0.135, y: 0.067, z: 0.14}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 0
@@ -133,6 +134,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &4541531089252061810
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350571813557190447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24, y: 0.32, z: 0.29}
+  m_Center: {x: -0.000000014901163, y: 0.000279706, z: 0.0955123}
 --- !u!1 &5408351501512843309
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5408351501512358925
 Transform:
   m_ObjectHideFlags: 0
@@ -161,8 +175,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5408351501512843309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0.063}
-  m_LocalScale: {x: 1.8519322, y: 3.5153542, z: 1.540309}
+  m_LocalPosition: {x: 0.0000000060532, y: 0.00044809, z: -0.063}
+  m_LocalScale: {x: 1.8519322, y: 1.913337, z: 1.540309}
   m_Children: []
   m_Father: {fileID: 1350571813557281551}
   m_RootOrder: 0

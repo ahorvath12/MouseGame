@@ -78,10 +78,6 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    // public void IsCheeseInRange(bool inRange)
-    // {
-    //     canEatCheese = inRange;
-    // }
 
 
     void UseStamina(float amount)

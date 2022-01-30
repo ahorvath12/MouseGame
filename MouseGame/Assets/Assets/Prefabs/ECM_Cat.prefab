@@ -52,7 +52,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -2887395219553101077}
         m_TargetAssemblyTypeName: EnemyManager, Assembly-CSharp
-        m_MethodName: StartChase
+        m_MethodName: StartRaycast
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -2887395219553101077}
         m_TargetAssemblyTypeName: EnemyManager, Assembly-CSharp
-        m_MethodName: StartChase
+        m_MethodName: StartRaycast
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
