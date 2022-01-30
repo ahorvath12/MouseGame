@@ -7,10 +7,13 @@ public class EnemyManager : MonoBehaviour
 {
     enum EnemyState
     {
+        Start,
         Idle,
         Chasing,
         Kill
     }
+    static bool playAudio;
+
     public LayerMask layerToAvoid;
     public AudioClip[] audioClips;
 
@@ -30,13 +33,24 @@ public class EnemyManager : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
+        state = EnemyState.Start;
+        playAudio = false;
+    }
+
+    void StartEnemy()
+    {
         state = EnemyState.Idle;
+        playAudio = true;
     }
 
     void Update()
     {
         switch (state)
         {
+            case EnemyState.Start:
+                if (UIManager.Instance.running)
+                    StartEnemy();
+                break;
             case EnemyState.Idle:
                 Idling();
                 break;
@@ -45,14 +59,19 @@ public class EnemyManager : MonoBehaviour
                 break;
             case EnemyState.Kill:
                 agent.isStopped = true;
+                if (audioCoroutine != null)
+                {
+                    StopCoroutine(audioCoroutine);
+                    audioCoroutine = null;
+                }
+                playAudio = false;
                 StartCoroutine(FadeAudio());
+                break;
+            default:
                 break;
         }
 
-        if (audioCoroutine == null)
-        {
-            audioCoroutine = StartCoroutine(SelectAudioClips());
-        }
+
     }
 
     void Idling()
@@ -71,6 +90,11 @@ public class EnemyManager : MonoBehaviour
         {
             coroutine = StartCoroutine(WaitBeforeMoving());
         }
+
+        if (audioSource.enabled && audioCoroutine == null)
+        {
+            audioCoroutine = StartCoroutine(SelectAudioClips());
+        }
     }
 
     void Chasing()
@@ -85,6 +109,10 @@ public class EnemyManager : MonoBehaviour
 
         agent.destination = player.transform.position;
 
+        if (audioSource.enabled && audioCoroutine == null)
+        {
+            audioCoroutine = StartCoroutine(SelectAudioClips());
+        }
     }
 
     IEnumerator WaitBeforeMoving()
@@ -102,7 +130,10 @@ public class EnemyManager : MonoBehaviour
     void StartChase()
     {
         if (coroutine != null)
+        {
             StopCoroutine(coroutine);
+            coroutine = null;
+        }
 
         state = EnemyState.Chasing;
     }
@@ -130,7 +161,7 @@ public class EnemyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(3, 7));
 
-        if (!audioSource.isPlaying && Random.Range(0, 100) > 90)
+        if (playAudio && !audioSource.isPlaying && Random.Range(0, 100) > 90)
         {
             audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
             audioSource.Play();
@@ -144,10 +175,11 @@ public class EnemyManager : MonoBehaviour
     {
         while (audioSource.volume > 0)
         {
-            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.005f, 5f);
+            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.05f, 3);
             yield return null;
         }
         audioSource.volume = 0;
+        audioSource.enabled = false;
     }
 
     public void StartRaycast(bool inRange)
