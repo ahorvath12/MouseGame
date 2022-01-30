@@ -73,9 +73,10 @@ public class FoodSpawner : MonoBehaviour
         while (total > 0)
         {
             Vector3 spawnPos = new Vector3(transform.position.x + Random.Range(width * -1, width), offsetY, transform.position.z + Random.Range(length * -1, length));
+            Quaternion spawnRot = Quaternion.Euler(0, Random.Range(0, 360), 0);
             if (PositionRaycast(spawnPos))
             {
-                Instantiate(prefabs[Random.Range(0, prefabs.Length)], spawnPos, Quaternion.identity);
+                Instantiate(prefabs[Random.Range(0, prefabs.Length)], spawnPos, spawnRot);
                 total--;
             }
         }

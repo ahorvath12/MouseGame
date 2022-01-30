@@ -63,10 +63,13 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log(cheeseDetector.ObjectInRange.name);
             //eat cheese
-            if (canEatCheese && cheeseDetector.ObjectInRange != null)
+            if (cheeseDetector.ObjectInRange != null)
             {
-                Destroy(cheeseDetector.ObjectInRange);
+                if (cheeseDetector.ObjectInRange.transform.parent != null)
+                    Destroy(cheeseDetector.ObjectInRange.transform.parent);
+                else Destroy(cheeseDetector.ObjectInRange);
                 OnEatCheeseEvent?.Invoke();
                 anim.SetBool("Eat", true);
                 //charController.enabled = false;
@@ -76,10 +79,10 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    public void IsCheeseInRange(bool inRange)
-    {
-        canEatCheese = inRange;
-    }
+    // public void IsCheeseInRange(bool inRange)
+    // {
+    //     canEatCheese = inRange;
+    // }
 
 
     void UseStamina(float amount)

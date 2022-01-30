@@ -145,7 +145,8 @@ GameObject:
   - component: {fileID: 5408351501513686061}
   - component: {fileID: 5408351501514784493}
   - component: {fileID: 5408351501512746626}
-  m_Layer: 7
+  - component: {fileID: 1469966990623650888}
+  m_Layer: 0
   m_Name: cheese-collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,3 +230,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4d23400462cba774387528fbc59c4d2f, type: 3}
+--- !u!208 &1469966990623650888
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5408351501512843309}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.062000003, y: 0.067, z: 0.095000006}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0.096}
+  m_TimeToStationary: 0.5
