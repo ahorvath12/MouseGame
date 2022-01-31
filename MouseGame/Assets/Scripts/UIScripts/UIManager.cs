@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour
             gameOverScreen.transform.position = new Vector3(gameOverScreen.transform.position.x, yVal, gameOverScreen.transform.position.z);
             yield return null;
         }
-
+        Cursor.visible = true;
         gameOverScreen.transform.localPosition = newPos;
     }
 }
