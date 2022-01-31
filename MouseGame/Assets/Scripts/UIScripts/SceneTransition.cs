@@ -27,7 +27,7 @@ public class SceneTransition : MonoBehaviour
         else if (SceneManager.GetActiveScene().buildIndex == 1)
             anim.SetTrigger("Cover");
 
-
+        Cursor.visible = true;
     }
 
     public void TransitionOut()
@@ -38,6 +38,11 @@ public class SceneTransition : MonoBehaviour
     public void TransitionIn()
     {
         anim.SetTrigger("In");
+    }
+
+    public void ShowCursor(bool show)
+    {
+        Cursor.visible = show;
     }
 
     public void ActivateScene()

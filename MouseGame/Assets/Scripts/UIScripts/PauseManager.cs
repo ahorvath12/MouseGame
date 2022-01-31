@@ -43,6 +43,7 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = 0f;
             UIManager.Instance.PlaySqueak(squeak1);
             pauseScreen.SetActive(true);
+            Cursor.visible = true;
         }
     }
 
@@ -54,6 +55,7 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = 1f;
             UIManager.Instance.PlaySqueak(squeak2);
             pauseScreen.SetActive(false);
+            Cursor.visible = false;
         }
     }
 
