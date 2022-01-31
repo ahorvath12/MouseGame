@@ -7,6 +7,7 @@ public class FurnitureSpawner : MonoBehaviour
 {
     public GameObject[] smallPrefabs, bigPrefabs;
     public LayerMask layerToIgnore;
+    public LayerMask spawnLayer;
     public bool respawn = true;
 
     static int minSpawns = 3, maxSpawns = 5;
@@ -22,14 +23,24 @@ public class FurnitureSpawner : MonoBehaviour
             SpawnPrefabs();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if (localObjs < minSpawns && respawn)
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, transform.localScale.x, spawnLayer);
+        if (hitColliders.Length < minSpawns)
         {
             SpawnPrefabs();
         }
     }
+
+    // Update is called once per frame
+    // void FixedUpdate()
+    // {
+    //     if (localObjs < minSpawns && respawn)
+    //     {
+    //         SpawnPrefabs();
+    //     }
+    // }
+
     bool PositionRaycast(Vector3 pos, Vector3 scale, Quaternion rot)
     {
         Collider[] hitColliders = new Collider[10];
@@ -73,19 +84,20 @@ public class FurnitureSpawner : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Furniture")
-        {
-            localObjs++;
-        }
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.tag == "Furniture")
+    //     {
+    //         localObjs++;
+    //     }
+    // }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Furniture")
-        {
-            localObjs--;
-        }
-    }
+    // void OnTriggerExit(Collider other)
+    // {
+    //     if (other.tag == "Furniture")
+    //     {
+    //         localObjs--;
+    //     }
+    // }
+
 }

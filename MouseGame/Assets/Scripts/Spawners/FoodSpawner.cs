@@ -10,6 +10,7 @@ public class FoodSpawner : MonoBehaviour
     public int maxSpawns = 15;
     public int minSpawns = 7;
     public LayerMask layerToIgnore;
+    public LayerMask spawnLayer;
     int existingFood = 0;
 
     float width, length;
@@ -27,31 +28,40 @@ public class FoodSpawner : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (existingFood < minSpawns && respawn)
+        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale / 2, Quaternion.identity, spawnLayer);
+        if (hitColliders.Length < minSpawns)
         {
             SpawnPrefabs();
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Food")
-        {
-            existingFood++;
-            if (despawn && existingFood > maxSpawns)
-            {
-                Destroy(other.gameObject);
-            }
-        }
-    }
+    // void FixedUpdate()
+    // {
+    //     if (existingFood < minSpawns && respawn)
+    //     {
+    //         SpawnPrefabs();
+    //     }
+    // }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Food")
-        {
-            existingFood--;
-        }
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.tag == "Food")
+    //     {
+    //         existingFood++;
+    //         if (despawn && existingFood > maxSpawns)
+    //         {
+    //             Destroy(other.gameObject);
+    //         }
+    //     }
+    // }
+
+    // void OnTriggerExit(Collider other)
+    // {
+    //     if (other.tag == "Food")
+    //     {
+    //         existingFood--;
+    //     }
+    // }
 
     bool PositionRaycast(Vector3 pos)
     {
@@ -81,4 +91,5 @@ public class FoodSpawner : MonoBehaviour
             }
         }
     }
+
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3052098211020558415}
   m_Layer: 0
   m_Name: DetectZone
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: -2887395219553101077}
   - component: {fileID: 9170794459926598178}
   - component: {fileID: 1204405729477718763}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ECM_Cat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 7282464784758968282}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

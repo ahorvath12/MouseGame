@@ -844,7 +844,7 @@ BoxCollider:
   m_GameObject: {fileID: 149921249}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -917,6 +917,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &149921255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -939,6 +942,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &149921256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,6 +976,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   respawn: 1
 --- !u!1 &150038465
 GameObject:
@@ -2110,7 +2119,7 @@ BoxCollider:
   m_GameObject: {fileID: 244727294}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2185,6 +2194,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &244727300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2216,6 +2228,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   respawn: 0
 --- !u!1 &262077523
 GameObject:
@@ -3312,7 +3327,7 @@ BoxCollider:
   m_GameObject: {fileID: 406289505}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3385,6 +3400,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &406289511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,6 +3425,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &406289512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,6 +3459,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   respawn: 1
 --- !u!1 &407500304
 GameObject:
@@ -3984,7 +4008,7 @@ BoxCollider:
   m_GameObject: {fileID: 496305482}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4057,6 +4081,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &496305488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4079,6 +4106,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &496305489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4110,6 +4140,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   respawn: 1
 --- !u!1 &519231876
 GameObject:
@@ -5152,7 +5185,7 @@ BoxCollider:
   m_GameObject: {fileID: 676467040}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5225,6 +5258,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &676467046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5247,6 +5283,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &676467047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5278,6 +5317,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   respawn: 1
 --- !u!1 &680228871
 GameObject:
@@ -5935,7 +5977,7 @@ BoxCollider:
   m_GameObject: {fileID: 836012726}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -6008,6 +6050,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &836012732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6030,6 +6075,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &836012733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6061,6 +6109,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   respawn: 1
 --- !u!1 &841878086
 GameObject:
@@ -8339,7 +8390,7 @@ BoxCollider:
   m_GameObject: {fileID: 1328293055}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -8412,6 +8463,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &1328293061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8434,6 +8488,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &1328293062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8465,6 +8522,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   respawn: 1
 --- !u!1 &1350073951
 GameObject:
@@ -8807,7 +8867,7 @@ BoxCollider:
   m_GameObject: {fileID: 1385256227}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -8880,6 +8940,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &1385256233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8902,6 +8965,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &1385256234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8933,6 +8999,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   respawn: 1
 --- !u!1 &1387150261
 GameObject:
@@ -11971,7 +12040,7 @@ BoxCollider:
   m_GameObject: {fileID: 1792251866}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -12044,6 +12113,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &1792251872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12066,6 +12138,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &1792251873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12097,6 +12172,9 @@ MonoBehaviour:
   layerToIgnore:
     serializedVersion: 2
     m_Bits: 1
+  spawnLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   respawn: 1
 --- !u!1 &1803489551
 GameObject:

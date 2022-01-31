@@ -7,9 +7,11 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] prefabs;
     public int minSpawns = 4, maxSpawns = 8;
     public LayerMask layerToIgnore;
+    public LayerMask spawnLayer;
 
     float width, length;
     int localEnemies = 0;
+
 
     void Awake()
     {
@@ -17,14 +19,23 @@ public class EnemySpawner : MonoBehaviour
         length = transform.localScale.z / 2;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if (localEnemies < minSpawns)
+        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale / 2, Quaternion.identity, spawnLayer);
+        if (hitColliders.Length < minSpawns)
         {
             SpawnPrefabs();
         }
     }
+
+    // Update is called once per frame
+    // void FixedUpdate()
+    // {
+    //     if (localEnemies < minSpawns)
+    //     {
+    //         SpawnPrefabs();
+    //     }
+    // }
 
     bool PositionRaycast(Vector3 pos)
     {
@@ -56,19 +67,21 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy" && other.name.Contains("ECM"))
-        {
-            localEnemies++;
-        }
-    }
+    // void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.tag == "Enemy" && other.name.Contains("ECM"))
+    //     {
+    //         localEnemies++;
+    //     }
+    // }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Enemy" && other.name.Contains("ECM"))
-        {
-            localEnemies--;
-        }
-    }
+    // void OnTriggerExit(Collider other)
+    // {
+    //     if (other.tag == "Enemy" && other.name.Contains("ECM"))
+    //     {
+    //         localEnemies--;
+    //     }
+    // }
+
+
 }
