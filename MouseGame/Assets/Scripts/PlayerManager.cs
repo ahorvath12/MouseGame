@@ -141,7 +141,7 @@ public class PlayerManager : MonoBehaviour
 
         while (audioSource.volume > 0)
         {
-            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.05f, 3f * Time.deltaTime);
+            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.5f, 3f * Time.deltaTime);
             yield return null;
         }
         audioSource.volume = 0;
