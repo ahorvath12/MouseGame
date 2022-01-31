@@ -175,7 +175,7 @@ public class EnemyManager : MonoBehaviour
     {
         while (audioSource.volume > 0)
         {
-            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.05f, 3);
+            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.05f, 3 * Time.deltaTime);
             yield return null;
         }
         audioSource.volume = 0;

@@ -109,7 +109,7 @@ public class UIManager : MonoBehaviour
 
         while (gameOverScreen.transform.localPosition.y > 0)
         {
-            float yVal = Mathf.Lerp(gameOverScreen.transform.position.y, gameOverScreen.transform.position.y - 0.05f, 0.5f);
+            float yVal = Mathf.Lerp(gameOverScreen.transform.position.y, gameOverScreen.transform.position.y - 5f, 3 * Time.deltaTime);
             gameOverScreen.transform.position = new Vector3(gameOverScreen.transform.position.x, yVal, gameOverScreen.transform.position.z);
             yield return null;
         }

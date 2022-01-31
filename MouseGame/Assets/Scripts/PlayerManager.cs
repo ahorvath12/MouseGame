@@ -107,7 +107,7 @@ public class PlayerManager : MonoBehaviour
         while (currentStamina < 100)
         {
             //currentStamina += 2f;
-            currentStamina = Mathf.Lerp(currentStamina, currentStamina + 1, 0.1f);
+            currentStamina = Mathf.Lerp(currentStamina, currentStamina + 5, 3 * Time.deltaTime);
             uiManager.SetSliderVal(currentStamina);
             yield return null;
         }
@@ -141,7 +141,7 @@ public class PlayerManager : MonoBehaviour
 
         while (audioSource.volume > 0)
         {
-            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.0005f, 5f);
+            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.05f, 3f * Time.deltaTime);
             yield return null;
         }
         audioSource.volume = 0;

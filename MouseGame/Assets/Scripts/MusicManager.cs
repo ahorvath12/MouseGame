@@ -52,7 +52,7 @@ public class MusicManager : MonoBehaviour
         yield return null;
         while (audioSource.volume > 0)
         {
-            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.0005f, 5f);
+            audioSource.volume = Mathf.Lerp(audioSource.volume, audioSource.volume - 0.01f, 5f * Time.deltaTime);
             yield return null;
         }
         audioSource.volume = 0;
