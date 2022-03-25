@@ -6,7 +6,6 @@ public class OutOfBounds : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.tag == "Food" || other.tag == "Enemy" || other.tag == "Furniture")
         {
             Destroy(other.gameObject);

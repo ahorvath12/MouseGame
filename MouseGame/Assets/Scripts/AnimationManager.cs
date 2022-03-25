@@ -11,7 +11,7 @@ public class AnimationManager : MonoBehaviour
     void Awake()
     {
         anim = GetComponent<Animator>();
-        rbody = transform.parent.GetComponent<Rigidbody>();
+        //rbody = transform.parent.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

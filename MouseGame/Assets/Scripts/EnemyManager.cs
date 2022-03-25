@@ -102,7 +102,6 @@ public class EnemyManager : MonoBehaviour
         if (!SeePlayer())
         {
             state = EnemyState.Idle;
-            Debug.Log("return to idle");
             //agent.destination = transform.position;
             return;
         }
